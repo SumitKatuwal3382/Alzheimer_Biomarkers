@@ -1,0 +1,100 @@
+{
+  "model": "det80_ENS(LogReg+XGB+GB)",
+  "AUC_cv": 0.9153,
+  "accuracy_cv": 0.8891,
+  "balanced_acc_cv": 0.8217,
+  "threshold_rule": "accuracy (chosen on training data)",
+  "components": {
+    "det80_LogReg": [
+      {
+        "clf__C": 0.1,
+        "clf__l1_ratio": 0.5,
+        "features__ncrna__select__k": "all"
+      },
+      {
+        "clf__C": 0.1,
+        "clf__l1_ratio": 1.0,
+        "features__ncrna__select__k": "all"
+      },
+      {
+        "clf__C": 0.1,
+        "clf__l1_ratio": 0.5,
+        "features__ncrna__select__k": "all"
+      },
+      {
+        "clf__C": 0.1,
+        "clf__l1_ratio": 0.5,
+        "features__ncrna__select__k": "all"
+      },
+      {
+        "clf__C": 0.1,
+        "clf__l1_ratio": 1.0,
+        "features__ncrna__select__k": "all"
+      }
+    ],
+    "det80_XGBoost": [
+      {
+        "clf__learning_rate": 0.03,
+        "clf__max_depth": 4,
+        "clf__n_estimators": 600,
+        "features__ncrna__select__k": "all"
+      },
+      {
+        "clf__learning_rate": 0.03,
+        "clf__max_depth": 2,
+        "clf__n_estimators": 600,
+        "features__ncrna__select__k": "all"
+      },
+      {
+        "clf__learning_rate": 0.06,
+        "clf__max_depth": 2,
+        "clf__n_estimators": 600,
+        "features__ncrna__select__k": "all"
+      },
+      {
+        "clf__learning_rate": 0.06,
+        "clf__max_depth": 3,
+        "clf__n_estimators": 600,
+        "features__ncrna__select__k": "all"
+      },
+      {
+        "clf__learning_rate": 0.03,
+        "clf__max_depth": 3,
+        "clf__n_estimators": 600,
+        "features__ncrna__select__k": "all"
+      }
+    ],
+    "det80_GradBoost": [
+      {
+        "clf__l2_regularization": 1.0,
+        "clf__learning_rate": 0.1,
+        "clf__max_depth": null,
+        "features__ncrna__select__k": "all"
+      },
+      {
+        "clf__l2_regularization": 1.0,
+        "clf__learning_rate": 0.1,
+        "clf__max_depth": 3,
+        "features__ncrna__select__k": "all"
+      },
+      {
+        "clf__l2_regularization": 1.0,
+        "clf__learning_rate": 0.1,
+        "clf__max_depth": 3,
+        "features__ncrna__select__k": "all"
+      },
+      {
+        "clf__l2_regularization": 1.0,
+        "clf__learning_rate": 0.1,
+        "clf__max_depth": 3,
+        "features__ncrna__select__k": "all"
+      },
+      {
+        "clf__l2_regularization": 1.0,
+        "clf__learning_rate": 0.1,
+        "clf__max_depth": 3,
+        "features__ncrna__select__k": 300
+      }
+    ]
+  }
+}

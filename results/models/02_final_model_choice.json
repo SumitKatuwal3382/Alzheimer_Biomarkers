@@ -1,0 +1,12 @@
+{
+  "feature_set": "C_ncrna+clinical",
+  "algorithm": "XGBoost",
+  "cv_AUC_mean": 0.9069,
+  "cv_AUC_sd": 0.0206,
+  "params": {
+    "clf__learning_rate": 0.05,
+    "clf__max_depth": 4,
+    "features__ncrna__select__k": "all"
+  },
+  "ncrna_features": "results/tables/01_eda_filtered_mirnas.csv"
+}
