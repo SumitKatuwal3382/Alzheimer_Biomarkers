@@ -1,0 +1,13 @@
+# Environment
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+
+# Data (re-create with src/download_geo.py + src/build_datasets.py)
+data/raw/
+data/processed/
+
+# Keep the fixed train/test split and reference tables under version control
+!data/splits/
