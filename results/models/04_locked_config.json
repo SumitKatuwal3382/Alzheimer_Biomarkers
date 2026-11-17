@@ -1,0 +1,25 @@
+{
+  "locked_at": "2026-11-16T15:58:16",
+  "primary_endpoint": "test AUC, AD vs NC, model ENS(LogReg+XGB+GB) on 817 ncRNAs + age, sex, APOE4, detect_rate",
+  "models": {
+    "ENS(LogReg+XGB+GB)": "average probability of 3 pipelines, each tuned by 5-fold GridSearchCV on full training split (BIG_GRIDS, k in [100, 300, all])",
+    "ENS(LogReg+XGB)": "same, 2 components (best accuracy in 02b)",
+    "Panel10+clinical": "LogReg C=1 on top-10 ncRNAs from notebook 03 + covariates",
+    "Clinical+quality": "LogReg C=1 on age, sex, APOE4, detect_rate (baseline A2)",
+    "Clinical": "LogReg C=1 on age, sex, APOE4 (baseline A)"
+  },
+  "thresholds": "chosen on 5-fold training OOF predictions; rules: 'accuracy' and 'balanced'",
+  "ncrna_features": 817,
+  "top10": [
+    "hsa-miR-128-1-5p",
+    "hsa-miR-3917",
+    "hsa-miR-4667-5p",
+    "hsa-miR-1471",
+    "hsa-miR-6861-5p",
+    "hsa-miR-3122",
+    "hsa-miR-6743-5p",
+    "hsa-miR-3689d",
+    "hsa-miR-6840-3p",
+    "hsa-miR-6784-5p"
+  ]
+}
