@@ -1,0 +1,18 @@
+cv_AD_vs_DLB_A2_clinical+quality_LogReg: 2s
+cv_AD_vs_DLB_A2_clinical+quality_XGBoost: 1s
+cv_AD_vs_DLB_C_ncrna+clinical_LogReg: 6s
+cv_AD_vs_DLB_C_ncrna+clinical_XGBoost: 48s
+cv_AD_vs_VaD_A2_clinical+quality_LogReg: 0s
+cv_AD_vs_VaD_A2_clinical+quality_XGBoost: 1s
+cv_AD_vs_VaD_C_ncrna+clinical_LogReg: 6s
+cv_AD_vs_VaD_C_ncrna+clinical_XGBoost: 35s
+cv_AD_vs_other_A2_clinical+quality_LogReg: 0s
+cv_AD_vs_other_A2_clinical+quality_XGBoost: 1s
+cv_AD_vs_other_C_ncrna+clinical_LogReg: 6s
+cv_AD_vs_other_C_ncrna+clinical_XGBoost: 55s
+cv_Dem_vs_NC_A2_clinical+quality_LogReg: 0s
+cv_Dem_vs_NC_A2_clinical+quality_XGBoost: 1s
+cv_Dem_vs_NC_C_ncrna+clinical_LogReg: 7s
+cv_Dem_vs_NC_C_ncrna+clinical_XGBoost: 68s
+stability_AD_vs_other: 38s
+phase 1 done

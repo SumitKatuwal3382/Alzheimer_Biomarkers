@@ -1,0 +1,23 @@
+{
+  "locked_at": "2026-11-17T14:35:37",
+  "rule": "per task and feature set, the algorithm with the higher nested-CV AUC on the training split; refit with 5-fold GridSearchCV on the full training split; thresholds chosen on training OOF predictions (rule: balanced accuracy)",
+  "primary_endpoint": "test AUC for AD_vs_other, C_ncrna+clinical vs A2_clinical+quality",
+  "choice": {
+    "AD_vs_DLB": {
+      "A2_clinical+quality": "LogReg",
+      "C_ncrna+clinical": "LogReg"
+    },
+    "AD_vs_VaD": {
+      "A2_clinical+quality": "LogReg",
+      "C_ncrna+clinical": "LogReg"
+    },
+    "AD_vs_other": {
+      "A2_clinical+quality": "LogReg",
+      "C_ncrna+clinical": "LogReg"
+    },
+    "Dem_vs_NC": {
+      "A2_clinical+quality": "LogReg",
+      "C_ncrna+clinical": "XGBoost"
+    }
+  }
+}
