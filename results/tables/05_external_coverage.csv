@@ -1,0 +1,7 @@
+dataset,platform,n,AD,MCI,NC,miRNAs_measured,miRNAs_detected,signature_measured,signature_detected,top10_measured,top10_detected
+GSE215789_plasma,seq_counts,105,23,61,21,2743,287,254,25,10,0
+GSE215789_serum,seq_counts,112,28,63,21,2743,267,254,21,10,0
+GSE46579_blood,seq_normalized,70,48,0,22,417,344,21,18,0,0
+GSE305625_plasma,qpcr,145,71,0,74,60,60,2,2,0,0
+GSE305625_csf,qpcr,143,68,0,75,60,60,2,2,0,0
+GSE157239_brain,array_log2,16,8,0,8,2578,503,259,49,10,3
