@@ -1,0 +1,7 @@
+median RandomForest: 112s  n=98
+median LogReg: 96s  n=98
+quantile RandomForest: 97s  n=98
+quantile LogReg: 65s  n=98
+no_outl RandomForest: 122s  n=85
+no_outl LogReg: 102s  n=85
+all done

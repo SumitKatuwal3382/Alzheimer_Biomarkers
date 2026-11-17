@@ -28,11 +28,27 @@ def gene_of(feature):
     return name.rsplit("-", 1)[0] if "-" in name else name
 
 
-def load_secondary(kind, min_detect=0.5, top_var=5000):
+def normalize(X, norm):
+    """Per-sample, label-free normalisation of log2 data (sensitivity analyses).
+    'median'  : subtract each sample's median  -> removes global level shifts
+    'quantile': give every sample the same distribution (mean of sorted values)"""
+    if norm is None:
+        return X
+    if norm == "median":
+        return X.sub(X.median(axis=1), axis=0)
+    if norm == "quantile":
+        ref = np.sort(X.values, axis=1).mean(axis=0)
+        ranks = X.rank(axis=1, method="first").astype(int).values - 1
+        return pd.DataFrame(ref[ranks], index=X.index, columns=X.columns)
+    raise ValueError(norm)
+
+
+def load_secondary(kind, min_detect=0.5, top_var=5000, norm=None, drop=None):
     """Load lncRNA or circRNA, apply label-free filters and log2(x+1).
 
     - circRNA: drop failed samples (total TPM < 1e5, i.e. essentially empty)
     - keep features with value > 1 in >= `min_detect` of samples
+    - optional per-sample normalisation (`norm`) and sample exclusion (`drop`), for sensitivity analyses
     - keep the `top_var` most variable features (on the log scale)
     These filters never look at the diagnosis, so they cannot leak label information.
     Returns X (log2), y (1 = AD), info dict.
@@ -45,7 +61,10 @@ def load_secondary(kind, min_detect=0.5, top_var=5000):
         X, clin = X[ok], clin[ok]
     X = X.loc[:, (X > 1).mean() >= min_detect]
     info["features_detected"] = X.shape[1]
-    X = np.log2(X + 1)
+    X = normalize(np.log2(X + 1), norm)
+    if drop is not None:
+        keep = ~X.index.isin(list(drop))
+        X, clin = X[keep], clin[keep]
     if top_var and X.shape[1] > top_var:
         X = X[X.var().sort_values(ascending=False).index[:top_var]]
     info["features_used"] = X.shape[1]
